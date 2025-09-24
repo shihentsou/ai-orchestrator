@@ -73,8 +73,7 @@ MIT License © 2025 [Your Name]
 ---
 
 ## 📬 Contact
-- Email: [your-email]
-- LinkedIn: [your-linkedin]
-- Project Docs: [link-to-one-pager-or-docs-hub]
+- Email: shihen.tsou@gmail.com
+- Project Docs: https://github.com/shihentsou/ai-orchestrator/tree/main/docs
 
 ---
