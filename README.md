@@ -52,10 +52,18 @@ For now, please refer to the demo and documentation:
 ## 📂 Repository Layout
 
 ```
+/docs
+README.md # Documentation hub and navigation
+Project-Memoria-Overview.md # Main pitch overview
+UAA-Market-Analysis.md
+UAA-Implementation-Guide.md
+JSON-RAG-Market-Positioning.md
+JSON-RAG-Integration-Guide.md
+AI_Orchestration-demo.pdf # Demo PDF (case study)
 /demos
-  /collab-fibonacci  # Multi-AI collaboration demo (link only)
-/docs               # Core documentation (market positioning, completion reports, technical features, integration guides, overview)
-```
+(reserved for runnable code examples, e.g., collab-fibonacci, JSON-RAG showcase)
+/README.md # Main project entry
+/LICENSE # MIT license```
 
 ---
 
