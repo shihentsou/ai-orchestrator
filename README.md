@@ -60,6 +60,7 @@ UAA-Implementation-Guide.md
 JSON-RAG-Market-Positioning.md
 JSON-RAG-Integration-Guide.md
 AI_Orchestration-demo.pdf # Demo PDF (case study)
+/json-rag
 /demos
 (reserved for runnable code examples, e.g., collab-fibonacci, JSON-RAG showcase)
 /README.md # Main project entry
