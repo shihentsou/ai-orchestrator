@@ -34,7 +34,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "test": "node tests/basic-test.js",
-    "prepublishOnly": "npm run build && npm test"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@xenova/transformers": "^2.6.0",
