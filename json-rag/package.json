@@ -1,42 +1,63 @@
 {
-  "name": "json-rag-v52-core",
-  "version": "5.2.1",
-  "description": "JSON-RAG v5.2.1 - High-performance hybrid search system with vector embeddings and full-text search",
-  "type": "module",
-  "main": "core/json-rag-core.js",
-  "scripts": {
-    "demo": "node demos/hybrid-search-demo.js",
-    "demo:showcase": "node demos/json-rag-showcase.js",
-    "test": "node tests/basic-test.js",
-    "test:all": "node tests/test-all.js",
-    "test:vector": "node tests/test-persistent-vector.js",
-    "benchmark": "node tests/benchmark.js",
-    "install:hnswlib": "npm install hnswlib-node@^3.0.0",
-    "example:vector": "node examples/vector-example.js",
-    "example:full": "node examples/json-rag-with-persistent-vector.js"
-  },
+  "name": "@memoria/json-rag-core",
+  "version": "0.1.0-alpha.1",
+  "description": "JSON Source-of-Truth with hybrid retrieval (structured + vector + FTS) - Alpha Release",
   "keywords": [
-    "json-rag",
-    "knowledge-management",
-    "vector-database",
+    "RAG",
+    "JSON",
+    "vector",
+    "fts",
     "hybrid-search",
-    "rag",
-    "semantic-search",
-    "hnsw",
-    "persistent-vector-storage"
+    "memory",
+    "AI",
+    "local-first",
+    "semantic-search"
   ],
-  "author": "JSON-RAG Contributors",
+  "author": "Project Memoria Contributors",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node tests/basic-test.js",
+    "prepublishOnly": "npm run build && npm test"
+  },
   "dependencies": {
     "@xenova/transformers": "^2.6.0",
-    "better-sqlite3": "^9.0.0",
+    "better-sqlite3": "^9.0.0"
+  },
+  "optionalDependencies": {
     "hnswlib-node": "^3.0.0"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/json-rag.git"
+    "url": "https://github.com/shihentsou/ai-orchestrator.git",
+    "directory": "json-rag"
+  },
+  "homepage": "https://github.com/shihentsou/ai-orchestrator/tree/master/json-rag",
+  "bugs": {
+    "url": "https://github.com/shihentsou/ai-orchestrator/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "alpha"
   }
 }
