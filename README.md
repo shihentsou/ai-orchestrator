@@ -1,7 +1,7 @@
 # Project Memoria: AI Orchestrator
 > **Open-source AI collaboration infrastructure — Making AIs work together better**
 
-[![npm version](https://img.shields.io/npm/v/@memoria/json-rag-core/alpha)](https://www.npmjs.com/package/@memoria/json-rag-core)
+[![npm version](https://img.shields.io/npm/v/@shihen.tsou/json-rag-core/alpha)](https://www.npmjs.com/package/@shihen.tsou/json-rag-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/shihentsou/ai-orchestrator?style=social)](https://github.com/shihentsou/ai-orchestrator)
 
@@ -35,11 +35,11 @@ Our business model is built on providing **value-added services** and **enterpri
 ### Install JSON-RAG (Available Now!)
 
 ```bash
-npm install @memoria/json-rag-core@alpha
+npm install @shihen.tsou/json-rag-core@alpha
 ```
 
 ```javascript
-import { index, query } from '@memoria/json-rag-core';
+import { index, query } from '@shihen.tsou/json-rag-core';
 
 // Add to memory
 await index([
@@ -109,7 +109,7 @@ We follow the successful path of **GitLab**, **Supabase**, and **Docker**:
 ## 🛣️ Roadmap
 
 ### Q4 2025
-- [x] JSON-RAG Alpha Release
+- [x] JSON-RAG Alpha Release on npm
 - [x] Open source core components
 - [ ] UAA Beta Release
 - [ ] First 100 contributors
@@ -149,7 +149,7 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 | Metric | Current | Target (2026) |
 |--------|---------|---------------|
 | GitHub Stars | 🌱 New | 5,000+ |
-| npm Downloads | 🚀 Launching | 50,000/month |
+| npm Downloads | ✅ Published! | 50,000/month |
 | Contributors | 1 | 100+ |
 | Enterprise Customers | 0 | 50+ |
 
@@ -202,6 +202,6 @@ Built on the shoulders of giants:
 
 <p align="center">
   <a href="https://github.com/shihentsou/ai-orchestrator">⭐ Star us on GitHub</a> •
-  <a href="https://www.npmjs.com/package/@memoria/json-rag-core">📦 Try on npm</a> •
+  <a href="https://www.npmjs.com/package/@shihen.tsou/json-rag-core">📦 Try on npm</a> •
   <a href="mailto:shihen.tsou@gmail.com">📧 Get in touch</a>
 </p>
