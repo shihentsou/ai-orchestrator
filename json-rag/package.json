@@ -1,5 +1,5 @@
 {
-  "name": "@memoria/json-rag-core",
+  "name": "@shihen.tsou/json-rag-core",
   "version": "0.1.0-alpha.1",
   "description": "JSON Source-of-Truth with hybrid retrieval (structured + vector + FTS) - Alpha Release",
   "keywords": [
