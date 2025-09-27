@@ -1,0 +1,58 @@
+# Development files
+tests/
+demos/
+examples/
+docs/
+scripts/
+.github/
+
+# Config files
+.eslintrc*
+.prettierrc*
+.gitignore
+tsconfig.json
+webpack.config.js
+
+# Build artifacts
+*.log
+*.tmp
+.DS_Store
+node_modules/
+coverage/
+.nyc_output/
+
+# Source maps
+*.map
+
+# Development dependencies
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*.swo
+
+# Documentation
+*.md
+!README.md
+!LICENSE
+
+# Sensitive or unnecessary files
+.env
+.env.*
+secrets.json
+config.local.js
+
+# Keep source minimal - only distribute essential files
+adapters/
+embedders/
+models/
+contracts/
+config/
+
+# Only include core functionality for alpha
+# Advanced features will be added in future versions
