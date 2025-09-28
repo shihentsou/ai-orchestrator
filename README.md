@@ -1,5 +1,5 @@
 # AI Orchestrator: Multi-Model Collaboration + Persistent Memory
-> **Open-source infrastructure for orchestrating multiple AIs with JSON-KG memory system**
+> **Open-source JSON-KG memory system with multi-AI orchestration capabilities**
 
 [![npm version](https://img.shields.io/npm/v/@shihen.tsou/json-rag-core/alpha)](https://www.npmjs.com/package/@shihen.tsou/json-rag-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -37,7 +37,7 @@ Three AI models collaborating through UAA:
 ## 🧠 Universal AI Adapter (UAA)
 
 ### What It Does
-Transforms multiple LLMs into a coordinated team with **role assignments**, **quality gates**, and **cost controls**.
+Transforms multiple LLMs into a coordinated team with **role assignments**, **quality gates**, and **cost controls**. Currently enhancing the execution layer to enable AI models to utilize MCP tools for file operations, testing, and deployment.
 
 ### Collaboration Process
 ```
@@ -93,7 +93,7 @@ A graph-native retrieval system that unifies **nodes**, **edges**, **vectors**, 
   "_id": "person:alice",
   "type": "researcher",
   "text": "Dr. Alice studies LLMs",
-  "embed": [...],  // 384-dim vector
+  "embed": [...],  // 384-dim vector (configurable)
   "attrs": { "specialization": "alignment" }
 }
 
@@ -135,7 +135,7 @@ Application Layer
 │    Universal AI Adapter (UAA)       │
 │  • Role assignment & orchestration  │
 │  • Quality gates & arbitration      │
-│  • Cost/latency optimization        │
+│  • MCP tool integration (in progress)│
 └────────────┬────────────────────────┘
              ↓
 ┌─────────────────────────────────────┐
@@ -170,7 +170,7 @@ Application Layer
 
 ## 🛠️ Installation & Usage
 
-### JSON-KG (Available Now)
+### JSON-KG (Open Source - Available Now)
 ```bash
 # Install
 npm install @shihen.tsou/json-rag-core@alpha
@@ -189,8 +189,8 @@ const results = await query('authentication', {
 });
 ```
 
-### UAA (Coming Soon)
-Full orchestration system will be released after JSON-KG stabilizes.
+### UAA
+The orchestration system demonstrated in our 6.4-minute collaboration example is actively being enhanced with MCP tool integration capabilities.
 
 ---
 
@@ -213,28 +213,24 @@ Full orchestration system will be released after JSON-KG stabilizes.
 
 ---
 
-## 🚦 Roadmap
+## 🚦 Project Status
 
-### Current Status
-- [x] JSON-KG core released on npm
-- [x] 6.4-minute collaboration demo
+### Completed
+- [x] JSON-KG core released on npm (open source)
+- [x] 6.4-minute AI collaboration demonstration
 - [x] Windows/Mac/Linux support
+- [x] Multi-model orchestration framework
 
-### Next Steps
-- [ ] UAA beta release
+### In Progress
+- [ ] MCP tool integration for UAA
 - [ ] Performance benchmarks
-- [ ] Integration examples
-
-### Future Vision
-- [ ] Distributed graph processing
-- [ ] Real-time collaboration
-- [ ] Visual workflow editor
+- [ ] Integration examples and documentation
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+We welcome contributions to the open-source JSON-KG component! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ### Get Support
 - **GitHub Issues**: [Report bugs & request features](https://github.com/shihentsou/ai-orchestrator/issues)
@@ -244,7 +240,7 @@ We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guideline
 
 ## 📜 License
 
-MIT License © 2025 Sean Tsou
+JSON-KG (JSON-RAG) is released under MIT License © 2025 Sean Tsou
 
 See [LICENSE](./LICENSE) for details.
 
@@ -252,10 +248,10 @@ See [LICENSE](./LICENSE) for details.
 
 <p align="center">
   <b>Making AIs work together to solve complex problems</b><br>
-  <i>Open-source infrastructure for the age of AI collaboration</i>
+  <i>Open-source memory infrastructure with orchestration capabilities</i>
 </p>
 
 <p align="center">
   <a href="https://github.com/shihentsou/ai-orchestrator">⭐ Star on GitHub</a> •
-  <a href="https://www.npmjs.com/package/@shihen.tsou/json-rag-core">📦 Try on npm</a>
+  <a href="https://www.npmjs.com/package/@shihen.tsou/json-rag-core">📦 Try JSON-KG on npm</a>
 </p>
