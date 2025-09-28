@@ -1,5 +1,5 @@
-# AI Orchestrator: Multi-Model Collaboration + Persistent Memory
-> **Open-source JSON-KG memory system with multi-AI orchestration capabilities**
+# AI Orchestrator: Multi-Model Collaboration + JSON-RAG/KG Memory
+> **Open-source infrastructure with JSON-RAG (aka JSON-KG) - a Knowledge Graph-native memory system for multi-AI orchestration**
 
 [![npm version](https://img.shields.io/npm/v/@shihen.tsou/json-rag-core/alpha)](https://www.npmjs.com/package/@shihen.tsou/json-rag-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,10 +11,10 @@
 
 Two complementary systems that transform how AIs work:
 
-**1. Universal AI Adapter (UAA)** - Multi-model collaboration orchestrator
-**2. JSON-KG (JSON-RAG)** - Knowledge graph-native memory system
+**1. Universal AI Adapter (UAA)** - Multi-model collaboration orchestrator  
+**2. JSON-RAG/KG** - Knowledge Graph-native memory system (JSON-RAG aka JSON-KG)
 
-Together, they enable AIs to collaborate, remember, and deliver production-grade results.
+**JSON-RAG (aka JSON-KG)** is a KG-native RAG system that treats nodes and edges as first-class citizens alongside vectors and full-text, enabling graph-constrained retrieval that reduces context by 3-10× and hallucinations by ≥60%.
 
 ---
 
@@ -66,7 +66,7 @@ const roles = {
 ```javascript
 const result = await uaa.execute({
   task: "legal.citation_check",
-  context: await jsonKG.query({
+  context: await jsonRAG.query({
     q: "precedent cases",
     graph: { edgeTypes: ["cites"], hops: 2 }
   }),
@@ -81,10 +81,10 @@ const result = await uaa.execute({
 
 ---
 
-## 🗄️ JSON-KG: Knowledge Graph Memory
+## 🗄️ JSON-RAG/KG: Knowledge Graph Memory
 
 ### What It Does
-A graph-native retrieval system that unifies **nodes**, **edges**, **vectors**, and **full-text search** for true 3D memory.
+**JSON-RAG (technical name: JSON-KG)** is a graph-native retrieval system that unifies **nodes**, **edges**, **vectors**, and **full-text search** for true 3D memory.
 
 ### Core Schema
 ```javascript
@@ -109,7 +109,7 @@ A graph-native retrieval system that unifies **nodes**, **edges**, **vectors**, 
 
 ### Graph-Constrained Query
 ```javascript
-const answer = await jsonKG.query({
+const answer = await jsonRAG.query({
   q: "Who studies AI safety?",
   filter: { nodeType: "researcher" },         // Structural
   vector: { topK: 100 },                      // Semantic
@@ -139,7 +139,7 @@ Application Layer
 └────────────┬────────────────────────┘
              ↓
 ┌─────────────────────────────────────┐
-│      JSON-KG Memory System          │
+│    JSON-RAG/KG Memory System        │
 │  • Knowledge graph (nodes + edges)  │
 │  • Vector search (embeddings)       │
 │  • Full-text search (FTS5)          │
@@ -158,9 +158,9 @@ Application Layer
 | Context optimization | ✅ Graph-constrained | ⚠️ Full context |
 | Provenance tracking | ✅ Every decision | ❌ |
 
-### JSON-KG vs Traditional RAG
-| Feature | JSON-KG | Vector-only RAG |
-|---------|---------|-----------------|
+### JSON-RAG/KG vs Vector-only RAG
+| Feature | JSON-RAG/KG | Vector-only RAG |
+|---------|-------------|-----------------|
 | Query capability | 3D (graph+vector+text) | 1D (similarity) |
 | Relationship queries | ✅ N-hop traversal | ❌ |
 | Context reduction | 3-10× smaller | Baseline |
@@ -170,7 +170,7 @@ Application Layer
 
 ## 🛠️ Installation & Usage
 
-### JSON-KG (Open Source - Available Now)
+### JSON-RAG/KG (Open Source - Available Now)
 ```bash
 # Install
 npm install @shihen.tsou/json-rag-core@alpha
@@ -216,7 +216,7 @@ The orchestration system demonstrated in our 6.4-minute collaboration example is
 ## 🚦 Project Status
 
 ### Completed
-- [x] JSON-KG core released on npm (open source)
+- [x] JSON-RAG/KG core released on npm (open source)
 - [x] 6.4-minute AI collaboration demonstration
 - [x] Windows/Mac/Linux support
 - [x] Multi-model orchestration framework
@@ -230,7 +230,7 @@ The orchestration system demonstrated in our 6.4-minute collaboration example is
 
 ## 🤝 Contributing
 
-We welcome contributions to the open-source JSON-KG component! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+We welcome contributions to the open-source JSON-RAG/KG component! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ### Get Support
 - **GitHub Issues**: [Report bugs & request features](https://github.com/shihentsou/ai-orchestrator/issues)
@@ -240,7 +240,7 @@ We welcome contributions to the open-source JSON-KG component! See [CONTRIBUTING
 
 ## 📜 License
 
-JSON-KG (JSON-RAG) is released under MIT License © 2025 Sean Tsou
+JSON-RAG/KG (JSON-RAG Core) is released under MIT License © 2025 Sean Tsou
 
 See [LICENSE](./LICENSE) for details.
 
@@ -248,10 +248,10 @@ See [LICENSE](./LICENSE) for details.
 
 <p align="center">
   <b>Making AIs work together to solve complex problems</b><br>
-  <i>Open-source memory infrastructure with orchestration capabilities</i>
+  <i>Open-source Knowledge Graph-native memory with orchestration capabilities</i>
 </p>
 
 <p align="center">
   <a href="https://github.com/shihentsou/ai-orchestrator">⭐ Star on GitHub</a> •
-  <a href="https://www.npmjs.com/package/@shihen.tsou/json-rag-core">📦 Try JSON-KG on npm</a>
+  <a href="https://www.npmjs.com/package/@shihen.tsou/json-rag-core">📦 Try JSON-RAG/KG on npm</a>
 </p>
