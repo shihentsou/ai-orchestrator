@@ -1,6 +1,6 @@
-# JSON-KG v5.2.1
+# JSON-RAG/KG v5.2.1
 
-> **A Knowledge Graph-native retrieval engine that unifies JSON nodes, graph edges, vectors, and full-text under one query plan. RAG is built-in via graph-constrained retrieval.**
+> **A Knowledge Graph-native RAG system (JSON-RAG aka JSON-KG) that unifies nodes, edges, vectors, and full-text under one query plan**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
@@ -9,15 +9,15 @@
 
 ## 🌟 Overview
 
-**JSON-KG = JSON + Knowledge Graph + RAG**. While other memory systems provide flat fragment storage, JSON-KG delivers knowledge-layer infrastructure with true relationship understanding.
+**JSON-RAG (aka JSON-KG)** is a Knowledge Graph-native RAG system that treats nodes and edges as first-class citizens alongside vectors and full-text. Unlike flat memory stores that only retrieve similar chunks, JSON-RAG/KG retrieves the right _subgraph_ with full relationship context.
 
 ### Core Difference in One Line
 **They = Application-layer memory (flat fragments)** | **We = Knowledge-layer infrastructure (3D relationships)**
 
 For FDA submissions, legal reasoning, or financial audits that require **traceable relationships and provenance**, these are not same-level alternatives.
 
-### Why JSON-KG Matters
-Flat memory stores retrieve similar chunks; **JSON-KG retrieves the right _subgraph_**. By constraining retrieval with **edge types, time windows, and provenance**, we cut context by **3-10×** and make every answer **auditable**—exactly what legal, clinical, and financial production systems require.
+### Why JSON-RAG/KG Matters
+By constraining retrieval with **edge types, time windows, and provenance**, we cut context by **3-10×** and make every answer **auditable**—exactly what legal, clinical, and financial production systems require.
 
 ## 🏗️ Node/Edge Schema
 
@@ -116,8 +116,8 @@ const results = await rag.query({
 
 ## 🏆 Technical Comparison
 
-| Feature | JSON-KG | MemGPT/Mem0 | LangChain Memory |
-|---------|----------|-------------|-----------------|
+| Feature | JSON-RAG/KG | MemGPT/Mem0 | LangChain Memory |
+|---------|-------------|-------------|-----------------|
 | **Database Type** | Native Graph + JSON | Vector + SQLite | Pluggable backends |
 | **Core Structure** | Nodes + Edges + Embeddings | Flat fragments | Key-value or vector |
 | **Relationship Queries** | ✅ N-hop traversal | ❌ | ⚠️ In-memory only |
@@ -146,7 +146,7 @@ Tokenizer: Built-in jieba-based segmentation for FTS5
 ```
 Flat Memory Systems:  Documents → Vectors → Similarity → Chunks
 
-JSON-KG (Graph-Constrained RAG):
+JSON-RAG/KG (Graph-Constrained RAG):
      ┌─────────────────────────────────────┐
      │      Native Knowledge Graph          │
      │  • Node/Edge/Provenance Storage      │
@@ -171,17 +171,17 @@ JSON-KG (Graph-Constrained RAG):
 
 ### Clinical Trials & FDA Submissions
 - **Challenge**: Track drug→adverse_event→population relationships with full provenance
-- **JSON-KG**: `drug→ae→population` subgraphs + CSR page references
+- **JSON-RAG/KG**: `drug→ae→population` subgraphs + CSR page references
 - **Result**: Auditable safety profiles with source traceability
 
 ### Legal Case Analysis  
 - **Challenge**: Find precedent chains and reasoning paths
-- **JSON-KG**: `case→cites→case` traversal + paragraph-level provenance
+- **JSON-RAG/KG**: `case→cites→case` traversal + paragraph-level provenance
 - **Result**: Complete citation networks with context preservation
 
 ### Financial Compliance & XBRL
 - **Challenge**: Map company→supplier→event→metric cascades
-- **JSON-KG**: Multi-hop financial relationships + temporal constraints
+- **JSON-RAG/KG**: Multi-hop financial relationships + temporal constraints
 - **Result**: Risk propagation analysis with regulatory alignment
 
 ## 📊 Performance
@@ -250,4 +250,4 @@ MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-**JSON-KG v5.2.1** - Where flat memories become cognitive graphs 🧠
+**JSON-RAG/KG v5.2.1** - Where flat memories become cognitive graphs 🧠
