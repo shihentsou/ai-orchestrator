@@ -1,6 +1,6 @@
 # JSON-RAG v5.2.1
 
-> **Industry's first Knowledge Graph-native memory system for LLMs - transforming flat memories into 3D cognitive networks**
+> **A Knowledge Graph-native RAG system (JSON-KG) that combines vector search, full-text search, and graph traversal for true 3D cognitive memory**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
@@ -9,40 +9,37 @@
 
 ## 🌟 Overview
 
-JSON-RAG goes beyond traditional vector databases to provide **true 3D cognitive networks** for AI applications.
+**JSON-RAG = JSON + Knowledge Graph + RAG**, providing native graph database capabilities alongside vector and full-text search. While other memory systems offer flat storage, JSON-RAG enables relationship queries, pattern discovery, and multi-hop reasoning.
 
-**The Dimensional Difference:**
-- **Flat Memory (MemGPT/Mem0)**: Can only find similar documents
-- **JSON-RAG Knowledge Graph**: Understands relationships, discovers patterns, enables reasoning
-
-### Core Innovation: Triple-Layer Intelligence
+### Core Architecture: Triple-Layer Intelligence
 ```
-Vector Search (Semantic) + FTS5 (Precision) + Knowledge Graph (Relationships) = True Understanding
+Vector Search (Semantic) + FTS5 (Precision) + Knowledge Graph (Relationships) = 3D Understanding
 ```
 
-## 🏆 Why JSON-RAG?
+## 🏆 Technical Comparison
 
 | Feature | JSON-RAG | MemGPT/Mem0 | LangChain Memory |
 |---------|----------|-------------|-----------------|
-| **Architecture** | KG + Vector + FTS | Vector/SQLite | Pluggable |
-| **Relationship Queries** | ✅ Native n-hop | ❌ | ⚠️ Toy only |
+| **Architecture** | Native KG + Vector + FTS | Vector/SQLite | Pluggable backends |
+| **Relationship Queries** | ✅ N-hop traversal | ❌ | ⚠️ Limited |
 | **Pattern Discovery** | ✅ Graph algorithms | ❌ | ❌ |
-| **Query Complexity** | 3D (multi-dimensional) | 2D/1D | 2D |
-| **Hidden Insights** | ✅ Auto-discovery | ❌ | ❌ |
+| **Query Dimensions** | 3D (semantic+text+graph) | 2D/1D | 2D |
+| **Causal Reasoning** | ✅ Path analysis | ❌ | ❌ |
 
 ## 🚀 Features
 
-### Knowledge Graph Capabilities (Game-Changer!)
-- **Entity-Relationship Management**: Store and query complex networks
-- **Graph Traversal**: N-hop queries, shortest path, pattern discovery
-- **Causal Reasoning**: Support for cause-effect chain analysis
+### Knowledge Graph Capabilities
+- **Entity-Relationship Management**: Store and query complex networks natively
+- **Graph Traversal**: N-hop queries, shortest path, community detection
+- **Pattern Discovery**: Identify hidden relationships and clusters
+- **Causal Analysis**: Trace cause-effect chains through the graph
 
 ### Production-Ready Search
-- **Hybrid Search**: Combines semantic, keyword, and graph traversal
-- **Multilingual Support**: Built-in Chinese tokenization
+- **Hybrid Search**: Simultaneous semantic, keyword, and graph queries
+- **Multilingual Support**: Built-in Chinese tokenization and search
 - **Flexible Storage**: SQLite, memory, or custom adapters
-- **384-dimension embeddings**: Compatible with all-MiniLM-L6-v2
-- **Windows-optimized**: Special handling for file operations
+- **384-dimension embeddings**: Compatible with all-MiniLM-L6-v2 (configurable)
+- **Windows-optimized**: Special file handling for Windows environments
 
 ## 📦 Installation
 
@@ -71,47 +68,51 @@ const rag = new JSONRAGCore({
         fulltext: 'fts5',
         vector: 'hnswlib'
     },
-    enableKnowledgeGraph: true  // Enable KG features
+    enableKnowledgeGraph: true  // Enable native KG features
 });
 
 await rag.initialize();
 
-// Traditional operations
+// Traditional document operations
 await rag.bulkWrite([{
     type: 'put',
     key: 'doc:1',
     value: {
         id: '1',
-        content: 'JSON-RAG enables intelligent knowledge management',
+        content: 'JSON-RAG enables graph-based knowledge management',
         metadata: { category: 'tech' }
     }
 }]);
 
-// Knowledge Graph operations (NEW!)
+// Knowledge Graph operations (native support)
 await rag.kg.addEntity('person:alice', {
     name: 'Alice',
     role: 'Researcher'
 });
 
-await rag.kg.addRelationship('person:alice', 'studies', 'topic:llm');
+await rag.kg.addRelationship('person:alice', 'studies', 'topic:llm', {
+    since: '2023',
+    papers: 5
+});
 
-// N-hop traversal
+// Multi-hop graph traversal
 const network = await rag.kg.traverse({
     from: 'person:alice',
-    hops: 3
+    hops: 3,
+    relationTypes: ['studies', 'collaborates']
 });
 ```
 
 ## 🌐 Architecture
 
 ```
-Traditional Vector DB (2D):  Documents → Embeddings → Similarity → Results
+Flat Vector DB (2D):  Documents → Embeddings → Similarity → Results
 
-JSON-RAG Knowledge Graph (3D):
+JSON-RAG/JSON-KG (3D):
      ┌─────────────────────────────────────┐
-     │    Knowledge Graph Engine (NEW!)    │
-     │  • Entity-Relationship Management   │
-     │  • Graph Traversal & Analysis       │
+     │      Native Knowledge Graph          │
+     │  • Entity-Relationship Storage       │
+     │  • Graph Algorithms & Traversal      │
      └────────────┬────────────────────────┘
                   │
      ┌────────────▼────────────────────────┐
@@ -129,17 +130,17 @@ JSON-RAG Knowledge Graph (3D):
 
 ## 🎮 Real-World Applications
 
-### Medical Research
-- **Traditional**: Search similar symptoms
-- **JSON-RAG**: Discover drug→gene→symptom causal chains
+### Medical/Clinical Research
+- **Flat Search**: Find similar symptoms
+- **JSON-KG**: Discover drug→gene→protein→symptom causal pathways
 
 ### Financial Analysis  
-- **Traditional**: Find similar stocks
-- **JSON-RAG**: Map ownership networks, track money flows
+- **Flat Search**: Find similar stocks
+- **JSON-KG**: Map ownership networks, money flows, cascade effects
 
 ### AI Agent Memory
-- **Traditional**: Remember conversations
-- **JSON-RAG**: Understand cognitive patterns, connect disparate memories
+- **Flat Search**: Retrieve similar conversations
+- **JSON-KG**: Build cognitive maps, connect disparate memories, understand patterns
 
 ## 📂 Project Structure
 
@@ -147,7 +148,7 @@ JSON-RAG Knowledge Graph (3D):
 json-rag/
 ├── core/                    # Core system components
 │   ├── json-rag-core.js    # Main entry point
-│   └── kg-engine.js        # Knowledge Graph engine (NEW!)
+│   └── kg-engine.js        # Native Knowledge Graph engine
 ├── adapters/               # Pluggable adapters
 │   ├── storage/           # Storage backends
 │   └── index/             # Index implementations
@@ -166,7 +167,7 @@ json-rag/
         vector: 'hnswlib'
     },
     
-    // Knowledge Graph configuration (NEW!)
+    // Knowledge Graph configuration
     knowledgeGraph: {
         enabled: true,
         maxHops: 5,
@@ -188,18 +189,20 @@ json-rag/
 |-----------|-------|------|------|
 | Vector Search | 100k docs | 8ms | Semantic |
 | FTS Search | 100k docs | 15ms | Keywords |
-| **2-hop Traversal** | 10k entities | 12ms | **Graph** |
-| **Pattern Discovery** | 50k entities | 150ms | **Graph** |
+| **Graph Traversal (2-hop)** | 10k entities | 12ms | **Native KG** |
+| **Pattern Discovery** | 50k entities | 150ms | **Native KG** |
+| **Shortest Path** | 10k entities | 8ms | **Native KG** |
 | Hybrid Query | 100k items | 25ms | Combined |
 
 ## 🚦 Roadmap
 
-- [x] Triple-layer search (Vector + FTS + Graph)
-- [x] Basic Knowledge Graph operations
+- [x] Native Knowledge Graph with triple-layer search
+- [x] Entity-relationship management
+- [x] Multi-hop traversal and path analysis
 - [ ] Graph Neural Network integration
 - [ ] Temporal knowledge graphs
 - [ ] Auto knowledge extraction from text
-- [ ] Visualization UI for graph exploration
+- [ ] Graph visualization UI
 
 ## 🤝 Contributing
 
@@ -216,4 +219,4 @@ MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-**JSON-RAG v5.2.1** - Not just memory, but understanding 🧠
+**JSON-RAG v5.2.1** - Native Knowledge Graph for cognitive memory 🧠
